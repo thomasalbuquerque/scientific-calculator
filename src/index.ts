@@ -4,6 +4,10 @@ function add(values: Decimal[]) {
   return values.reduce((a, b) => a.plus(b));
 }
 
+function sub(values: Decimal[]) {
+  return values.reduce((a, b) => a.minus(b));
+}
+
 function subtract(A: Decimal, B: Decimal) {
   return A.minus(B);
 }
@@ -74,6 +78,25 @@ function main() {
     new Decimal('250.6821710610984'),
   ]);
   console.log('sumT5', sumT5);
+
+  const subT6 = sub([
+    new Decimal('0.002705230520360400'),
+    new Decimal('48.67217106109838'),
+    new Decimal('50.18217106109838'),
+    new Decimal('49.39217106109838'),
+  ]);
+  console.log('subT6', subT6);
+
+  const subT7 = sub([
+    new Decimal('0.009790063204112176'),
+    new Decimal('56.052171061098385'),
+    new Decimal('79.70217106109838'),
+    new Decimal('250.6821710610984'),
+  ]);
+  console.log('subT7', subT7);
+
+  const sumT8 = add([new Decimal('31065.409949520963'), new Decimal('299874.83412554'), new Decimal('5731.520722087009098106')]);
+  console.log('sumT8', sumT8);
 }
 
 main();
